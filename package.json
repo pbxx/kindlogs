@@ -1,0 +1,22 @@
+{
+  "name": "kindlogs",
+  "version": "1.0.0",
+  "description": "A friendly logger for when verbosity is required...",
+  "main": "kindlogs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbxx/kindlogs.git"
+  },
+  "author": "Donavan Lewis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pbxx/kindlogs/issues"
+  },
+  "homepage": "https://github.com/pbxx/kindlogs#readme",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
