@@ -9,7 +9,7 @@ var globalDefaults = {
             format: {
                 startChar: "[ ",
                 endChar: " ]",
-                lineNumSeparator: " | ",
+                lineNumSeparator: " @",
                 lineNumDelim: ":",
                 extraLine: false,
                 callerLine: true,
@@ -24,7 +24,7 @@ var globalDefaults = {
             format: {
                 startChar: "[ ",
                 endChar: " ]",
-                lineNumSeparator: " | ",
+                lineNumSeparator: " @",
                 lineNumDelim: ":",
                 extraLine: false,
                 callerLine: true,
@@ -39,7 +39,7 @@ var globalDefaults = {
             format: {
                 startChar: "[ ",
                 endChar: " ]",
-                lineNumSeparator: " | ",
+                lineNumSeparator: " @",
                 lineNumDelim: ":",
                 extraLine: false,
                 callerLine: true,
@@ -52,7 +52,7 @@ var globalDefaults = {
         default: {
             startChar: "[ ",
             endChar: " ]",
-            lineNumSeparator: " | ",
+            lineNumSeparator: " @",
             lineNumDelim: ":",
             extraLine: false,
             callerLine: true,
@@ -61,7 +61,7 @@ var globalDefaults = {
         curly: {
             startChar: "~[ ",
             endChar: " ]~",
-            lineNumSeparator: " | ",
+            lineNumSeparator: " @",
             lineNumDelim: ":",
             extraLine: false,
             callerLine: true,
@@ -70,7 +70,7 @@ var globalDefaults = {
         minimal: {
             startChar: "",
             endChar: "",
-            lineNumSeparator: " - ",
+            lineNumSeparator: " @",
             lineNumDelim: ":",
             extraLine: false,
             callerLine: true,
@@ -148,7 +148,7 @@ module.exports = {
             }
 
             for (var key of Object.keys(globalDefaults.loggers)) {
-                console.log(key)
+                //console.log(key)
                 this.add(key, globalDefaults.loggers[key])
                 
             }
