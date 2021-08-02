@@ -80,7 +80,7 @@ var globalDefaults = {
 }
 
 module.exports = {
-	KindLogger: class {
+	KindLogs: class {
 		constructor(fname) {
             this.loggers = {}
 
