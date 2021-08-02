@@ -1,5 +1,7 @@
-![kindlogs-github](https://user-images.githubusercontent.com/5501027/127819952-3659c860-c134-4345-849e-dfd50e61de71.png)
 # What is this? 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/5501027/127820224-fd1f4230-fe34-44b7-b230-ef987e30e8ac.png">
+</p>
 
 A friendly logger for when verbosity is required...
 
