@@ -32,7 +32,7 @@ var globalDefaults = {
                 fname: 'KindLogger'
             },
         },
-        err: {
+        error: {
             color: "#eb3474",
             text: "error: ",
             use: "error",
