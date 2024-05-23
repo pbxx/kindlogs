@@ -1,26 +1,31 @@
-# What is this? 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/5501027/127821923-92bb2bd4-87c7-4a5f-8f4f-f9e70910ea47.png">
-</p>
+![Screenshot of the console output created by KindLogs](_docs/screenshot.png)
 
-A friendly logger for Node.js, when verbosity is required...
-
-Project still in development...
+# KindLogs
+A simple multi-level logging library for node.js, colors optional.
 
 # Installation 
-
-`npm i kindlogs`
-
+```sh
+npm i kindlogs
+```
+If you would like to use color mode, the `ansis` library is required:
+```sh
+npm i ansis
+```
 # Getting Started 
-
+KindLogs will only log levels `logLevel` or below. By default this is `3` (Warn), so only logs at level 3 or below will execute:
 ```JS
-const {KindLogs} = require('kindlogs');
+const { KindLogs } = require('kindlogs');
+
+const logs = new KindLogs({
+  logLevel: 6, // logging level, default is 3
+  color: true // color mode, default is false
+})
 
 function myFunction() {
-    var console = new KindLogs("main > myFunction()")
-    console.log('Custom labelled console.log with line and column number')
-
+  logs.log(5, 'Log level 5')
 }
 
 myFunction()
+// Console output:
+// [DEBUG] Log level 5
 ```
