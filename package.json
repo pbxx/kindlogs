@@ -21,6 +21,7 @@
   "homepage": "https://github.com/pbxx/kindlogs#readme",
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "ansis": "^3.2.0",
     "typescript": "^5.4.5"
   }
 }

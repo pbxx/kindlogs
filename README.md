@@ -1,7 +1,7 @@
-![Screenshot of the console output created by KindLogs](_docs/screenshot.png)
-
 # KindLogs
 A simple multi-level logging library for node.js, colors optional.
+
+![Screenshot of the console output created by KindLogs](_docs/screenshot.png)
 
 # Installation 
 ```sh
