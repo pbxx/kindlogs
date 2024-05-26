@@ -2,3 +2,4 @@
 * text=auto
 test/* linguist-vendored
 _docs/* linguist-vendored
+kindlogs.old.js linguist-vendored
