@@ -1,10 +1,15 @@
 {
   "name": "kindlogs",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A friendly logger for when verbosity is required...",
-  "main": "kindlogs.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-basic": "tsc",
+    "build": "npm run build-basic && npm run minify-dist",
+    "minify-dist": "esbuild dist/index.js --minify --allow-overwrite --outfile=dist/index.js",
+    "test": "npm run build && node test/test.js",
+    "test-nobuild": "node test/test.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +21,10 @@
     "url": "https://github.com/pbxx/kindlogs/issues"
   },
   "homepage": "https://github.com/pbxx/kindlogs#readme",
-  "dependencies": {
-    "chalk": "^4.1.2"
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "ansis": "^3.2.0",
+    "esbuild": "^0.21.4",
+    "typescript": "^5.4.5"
   }
 }
