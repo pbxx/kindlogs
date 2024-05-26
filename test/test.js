@@ -7,8 +7,12 @@ const logs = new KindLogs({
     fileOptions: {
         dir: "test/logs",
         name: "kindlogs",
-        logLevel: 3
+        logLevel: 3,
+        
     },
+    locale: "en-US",
+    timeZone: "UTC",
+    timestamp: true,
     
 })
 
