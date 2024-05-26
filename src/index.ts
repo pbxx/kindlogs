@@ -19,12 +19,13 @@ interface LogOptions {
 	fileOptions?: false | FileOptions
 }
 
+var ansis = null
+var fs = null
+var path = null
+
 export class KindLogs {
 	options: Record<string, any>
-	logMethods = ["debug", "log", "warn", "error", "trace"]
-	colorLib: any = null
-	fsLib: any = null
-	pathLib: any = null
+	logMethods = ["debug", "info", "log", "warn", "error", "trace"]
 	levelColors: any = null
 	displayLevelStrings = ["[EMERG]", "[ALERT]", "[CRIT]", "[ERROR]", "[WARN]", "[NOTICE]", "[INFO]", "[DEBUG]"]
 	constructor(opts?: LogOptions) {
@@ -53,13 +54,13 @@ export class KindLogs {
 	}
 	enableColor = () => {
 		// enable console colors on the class
-		this.colorLib = require("ansis")
-		this.levelColors = [this.colorLib.bold.black.bgRed, this.colorLib.bold.white.bgRed, this.colorLib.bold.white.bgRed, this.colorLib.bold.red, this.colorLib.bold.yellow, this.colorLib.bold.cyan, this.colorLib.bold.blue, this.colorLib.bold.white]
+		ansis = require("ansis")
+		this.levelColors = [ansis.bold.black.bgRed, ansis.bold.white.bgRed, ansis.bold.white.bgRed, ansis.bold.red, ansis.bold.yellow, ansis.bold.cyan, ansis.bold.blue, ansis.bold.white]
 		this.options.color = true
 	}
 	disableColor = () => {
 		// disable console colors on the class
-		this.colorLib = null
+		ansis = null
 		this.levelColors = null
 		this.options.color = false
 	}
@@ -73,8 +74,8 @@ export class KindLogs {
 			...this.options.fileOptions,
 		}
 		// load required libraries for file writing
-		this.fsLib = require("node:fs")
-		this.pathLib = require("node:path")
+		fs = require("node:fs")
+		path = require("node:path")
 
 		// create logs directory
 		if (this.options.fileOptions.forceCreateDir) {
@@ -85,13 +86,13 @@ export class KindLogs {
 		this.options.fileOptions = false
 	}
 	createDirIfNotExists = (dir: string): void => {
-		if (!this.fsLib.existsSync(dir)) {
+		if (!fs.existsSync(dir)) {
 			// dir does not exist
-			this.fsLib.mkdirSync(dir)
+			fs.mkdirSync(dir)
 		}
 		return
 	}
-	getStackTrace(err?: Error | string): Array<string> {
+	getStackTrace(err?: any): Array<string> {
 		var error: Error | undefined
 		// console.log(typeof(err))
 		if (typeof err == "string") {
@@ -135,7 +136,7 @@ export class KindLogs {
 				const displayLevelText = this.displayLevelStrings[level]
 				const isError = level <= 3
 				const pathElements = []
-				const filename = this.pathLib.resolve(this.options.fileOptions.dir, this.options.fileOptions.name + (isError ? ".error" : ".debug") + "." + this.options.fileOptions.ext)
+				const filename = path.resolve(this.options.fileOptions.dir, this.options.fileOptions.name + (isError ? ".error" : ".debug") + "." + this.options.fileOptions.ext)
 				const date = new Date().toLocaleString()
 				var lineString = `[${date}] ${displayLevelText} `
 				if (method == "error" || method == "warn") {
@@ -156,7 +157,7 @@ export class KindLogs {
 					lineString += `${args.join(", \n")} \n`
 				}
 
-				this.fsLib.appendFileSync(filename, lineString)
+				fs.appendFileSync(filename, lineString)
 			}
 		}
 		return

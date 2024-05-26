@@ -6,8 +6,10 @@ const logs = new KindLogs({
     color: true, // color mode, default is false
     fileOptions: {
         dir: "test/logs",
-        name: "kindlogs"
-    }
+        name: "kindlogs",
+        logLevel: 3
+    },
+    
 })
 
 async function run() {
@@ -18,7 +20,8 @@ async function run() {
     logs.error(3, "A sample string Error happened, disregard.")
     logs.warn(4, "Warning sample")
     logs.debug(7, "logs.debug() test")
-    logs.trace(7, "Trace sample")
+    logs.trace(7, "Trace sample", " With multiple args")
+    logs.log(7, "Normal log sample")
     console.log("** End log method tests **")
     
     console.log("** Non-color mode: **")

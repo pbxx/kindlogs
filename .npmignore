@@ -3,4 +3,5 @@ test/
 .vscode/
 
 kindlogs.old.js
+README.md
 CHANGELOG.md
