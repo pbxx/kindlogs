@@ -1,5 +1,6 @@
 _docs/
 test/
+.vscode/
 
 kindlogs.old.js
 CHANGELOG.md

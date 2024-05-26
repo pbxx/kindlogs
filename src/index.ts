@@ -16,7 +16,7 @@ interface LogOptions {
 export class KindLogs {
 	options: Record<string, any>
 	logMethods = ["debug", "log", "warn", "error", "trace"]
-	colorlib: any = null
+	colorLib: any = null
 	levelColors: any = null
     levelStrings = [
         "[EMERG]",
@@ -58,22 +58,22 @@ export class KindLogs {
 	}
     enableColor = () => {
         // enable console colors on the class
-        this.colorlib = require("ansis")
+        this.colorLib = require("ansis")
         this.levelColors = [
-            this.colorlib.bold.black.bgRed, 
-            this.colorlib.bold.white.bgRed, 
-            this.colorlib.bold.white.bgRed, 
-            this.colorlib.bold.red, 
-            this.colorlib.bold.yellow, 
-            this.colorlib.bold.cyan, 
-            this.colorlib.bold.blue, 
-            this.colorlib.bold.white 
+            this.colorLib.bold.black.bgRed, 
+            this.colorLib.bold.white.bgRed, 
+            this.colorLib.bold.white.bgRed, 
+            this.colorLib.bold.red, 
+            this.colorLib.bold.yellow, 
+            this.colorLib.bold.cyan, 
+            this.colorLib.bold.blue, 
+            this.colorLib.bold.white 
         ]
         this.options.color = true
     }
     disableColor = () => {
         // disable console colors on the class
-        this.colorlib = null
+        this.colorLib = null
         this.levelColors = null
         this.options.color = false
     }

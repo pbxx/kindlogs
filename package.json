@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && npm run minify-dist",
+    "build-basic": "tsc",
+    "build": "npm run build-basic && npm run minify-dist",
     "minify-dist": "esbuild dist/index.js --minify --allow-overwrite --outfile=dist/index.js",
     "test": "npm run build && node test/test.js",
-    "test-nb": "node test/test.js"
+    "test-nobuild": "node test/test.js"
   },
   "repository": {
     "type": "git",
