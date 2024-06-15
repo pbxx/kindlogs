@@ -1,6 +1,6 @@
 {
   "name": "kindlogs",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A friendly logger for when verbosity is required...",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

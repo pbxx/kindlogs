@@ -1,5 +1,5 @@
 # KindLogs
-A small and simple multi-level logging library for node.js, colors optional.
+A small multi-level logging library for node.js with file support.
 
 ![Screenshot of the console output created by KindLogs](_docs/screenshot.png)
 

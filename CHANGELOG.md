@@ -1,3 +1,6 @@
+# Version 3.1.0
+- Add Docusaurus 
+
 # Version 3.0.0
 - Major update, if you happened to be using 2.0.0, code will need changes in order to work.
 - Converted to TypeScript

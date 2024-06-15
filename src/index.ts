@@ -102,10 +102,11 @@ export class KindLogs {
 	getStackTrace(err?: any): Array<string> {
 		var error: Error | undefined
 		// console.log(typeof(err))
-		if (typeof err == "string") {
+        if (err && err.stack && err.message) {
+            // argument is a real error
+            error = err
+        } else {
 			error = new Error(err)
-		} else {
-			error = err
 		}
 		var stack: string = error.stack || new Error().stack
 		var stackArr: Array<string> = []

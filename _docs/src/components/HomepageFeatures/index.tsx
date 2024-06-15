@@ -10,35 +10,41 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Easy to use, color optional',
+    Svg: require('@site/static/img/feature-easy.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Support multi-level console and file logging out of the box, with minimal setup.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Localized time and date',
+    Svg: require('@site/static/img/feature-international.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        KindLogs can be set to any <a href='https://www.techonthenet.com/js/language_tags.php'>BCP 47 locale</a> and <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">time zone</a> in order to localize date and time formats used in timestamps.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Syslog-standard levels',
+    Svg: require('@site/static/img/feature-syslog.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        KindLogs uses Syslog-standard numeric levels <code>0-7</code> for deriving error levels, separating log-level from console method. 
       </>
     ),
   },
+  // {
+  //   title: 'Optional color',
+  //   Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+  //   description: (
+  //     <>
+  //       Enable color by simply installing <code>ansis</code> and enabling the <code>color</code> option.
+  //     </>
+  //   ),
+  // },
 ];
 
 function Feature({title, Svg, description}: FeatureItem) {
